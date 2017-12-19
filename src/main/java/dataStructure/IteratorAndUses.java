@@ -13,6 +13,7 @@ public class IteratorAndUses {
 			System.out.println(str);
 			if (str.equalsIgnoreCase("Ashish")) {
 				itr.remove();
+				System.out.println("Ashish removed");
 			}
 		}
 		System.out.println(list);
@@ -23,6 +24,7 @@ public class IteratorAndUses {
 			System.out.println(str);
 			if (str.equalsIgnoreCase("Amit")) {
 				itr.remove();
+				System.out.println("Amit removed");
 			}
 		}
 		System.out.println(list);
@@ -49,7 +51,10 @@ public class IteratorAndUses {
 }
 
 // Findings:
-// 1: We cant use an iterator twice to remove.Assign a new Iterator Object.
-// IteratorRemoveTwice()
+// 1: We cant use an iterator twice to remove.Assign a new Iterator
+// Object.IteratorRemoveTwice().This behaviour is because we are at the end of
+// itr in the end of first loop. After that if we try to iterate again, since it
+// is at the end, it doesnt iterate/delete further. Use ListIterator to go back to old index or re create object
+//
 // 2: IteratorMethodCall() method is removing value from list each time. But we
 // have to pass a new itr object.

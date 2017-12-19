@@ -17,13 +17,13 @@ public class IteratorAndUsesTest {
 		sut = new IteratorAndUses();
 	}
 
-	@Ignore
+	//@Ignore
 	@Test
 	public void IteratorRemoveTwiceTest() {
 		List<String> list = mockStringList();
 		sut.IteratorRemoveTwice(list);
 	}
-
+	@Ignore
 	@Test
 	public void IteratorMethodCallTest() {
 		List<String> list = mockStringList();
