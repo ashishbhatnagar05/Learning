@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import dataStructure.IteratorAndUses;
@@ -16,10 +17,17 @@ public class IteratorAndUsesTest {
 		sut = new IteratorAndUses();
 	}
 
+	@Ignore
 	@Test
-	public void iterator() {
+	public void IteratorRemoveTwiceTest() {
 		List<String> list = mockStringList();
 		sut.IteratorRemoveTwice(list);
+	}
+
+	@Test
+	public void IteratorMethodCallTest() {
+		List<String> list = mockStringList();
+		sut.IteratorMethodCall(list);
 	}
 
 	private List<String> mockStringList() {
