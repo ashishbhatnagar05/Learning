@@ -2,6 +2,7 @@ package dataStructure;
 
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 public class IteratorAndUses {
 	public void IteratorRemoveTwice(List<String> list) {
@@ -26,6 +27,7 @@ public class IteratorAndUses {
 				itr.remove();
 				System.out.println("Amit removed");
 			}
+
 		}
 		System.out.println(list);
 	}
@@ -48,13 +50,29 @@ public class IteratorAndUses {
 			}
 		}
 	}
+
+	public <T> void iterateOverListUsingAdvancedFor(List<T> list) {
+		if (list != null && !list.isEmpty())
+			for (T str : list) {
+				System.out.println(str);
+			}
+	}
+
+	public <K, V> void iterateOverMap(Map<K, V> map) {
+		if (map != null && !map.isEmpty()) {
+			for (Map.Entry<K, V> mapEntry : map.entrySet()) {
+				System.out.println("Key: " + mapEntry.getKey() + " Value: " + mapEntry.getValue());
+			}
+		}
+	}
 }
 
 // Findings:
 // 1: We cant use an iterator twice to remove.Assign a new Iterator
 // Object.IteratorRemoveTwice().This behaviour is because we are at the end of
 // itr in the end of first loop. After that if we try to iterate again, since it
-// is at the end, it doesnt iterate/delete further. Use ListIterator to go back to old index or re create object
+// is at the end, it doesnt iterate/delete further. Use ListIterator to go back
+// to old index or re create object
 //
 // 2: IteratorMethodCall() method is removing value from list each time. But we
 // have to pass a new itr object.
